@@ -1,14 +1,75 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Code Quiz</title>
+    <title>Coding Quiz</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./assests/css/syle.css" />
   </head>
+
+  <body>
+    <!--Header-->
+    <header>
+      <div class="scores">
+        <!--View Highscore left corner-->
+        <a id="score-check">View Highscores</a>
+    </div>
+    <!--Timer right corner-->
+    <p id="timer">Time: 75 seconds</p>
+    </header>
+
+<!--Quiz Intro-->
+<main>
+<div id="start" class="start-quiz">
+  <h1>Javascript Quiz</h1>
+  <p> <br> <strong>Welcome to the Quiz Challange!</strong><br><br>You have <strong>75 seconds</strong> to answer <strong>8 questions</strong>.
+    <br> Every incorrect answer will penalize your time by <strong>10 seconds</strong>.<br><br><strong>GOOD LUCK! </strong></p>
+    <br><div class="control">
+    <button id="start-button" class="button">Start Quiz</button>
+</div>
+</div>
+
+<!--Quiz Questions-->
+<section hidden id="question-quiz" class="hide">
+  <h1 id="question">Question</h1>
+  <div id="multiple-choice" class="btn-grid">
+      <button class="btn">Answer 1</button>
+      <button class="btn">Answer 2</button>
+      <button class="btn">Answer 3</button>
+      <button class="btn">Answer 4</button>
+  </div>
+  <h2 id="check-answer" class="correct-incorrect hide"></h2>
+  <div class="controls">
+      <button id="next-button" class="next-button hide">Next</button>
+  </div>
+</section>
+
+<!--Final Result-->
+<div id="score-result" class="hide">
+  <br><h1>Highscore</h1>
+ <br> <form id="submit-form">
+      <h3 id="user-score"></h3><br>
+      <label id="user-initials"><strong>Enter Initials:</strong</label>
+      <input type="text" id="initials-field" placeholder="    Enter Initials Here" />
+      <br><br><button id="submit-button">Submit</button>
+  </form>
+</div>
+
+<!--Leaderboard-->
+<section id="highscores" class="highscores-container hide">
+  <div id="high-scores">
+      <br><h1 class="centered">Leaderboard</h1>
+      <div id="highscore" class="highscore highscore-list">
+      </div>
+      <div class="controls">
+          <button id="back-button">Go Back</button>
+          <button id="clear-button">Clear Scores</button>
+      </div>
+  </div>
   
-  
-  <footer>
-</footer>
-<script src="assets/js/script.js"></script>
+</section>
+</main>
+
+<script async src="./assests/js/script.js"></script>
+ </body>
 </html>
