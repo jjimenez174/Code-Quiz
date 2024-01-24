@@ -1,4 +1,4 @@
-# Code-Quiz-code
+# JavaScript-Quiz
 
 ## Description
 The JavaScript Code Quiz has 8 multiple-choice questions. The user has a certain amount of time to complete the quiz. Upon completion, the user will see their score and can add it to the Leaderboard.
