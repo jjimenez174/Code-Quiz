@@ -103,7 +103,7 @@ var userScore = document.getElementById("user-score");
 var initialsField = document.getElementById("initials-field");
 
 var randomQuestions, currentQuestionIndex;
-var totalScore = 0;
+
 
 
 // Countdown Timer
@@ -117,10 +117,10 @@ function quizTimer() {
 
 // Start & Next Button
 startBtn.addEventListener("click", startQuiz);
-//nextBtn.addEventListener("click", () => {
-    // currentQuestionIndex++
-    // nextQuestion()
-//});
+nextBtn.addEventListener("click", () => {
+     currentQuestionIndex++
+     nextQuestion()
+});
 
 // Start Quiz
 function startQuiz() {
@@ -130,8 +130,7 @@ function startQuiz() {
     currentQuestionIndex = 0
     questionQuiz.classList.remove("hide");
 
-    startEl.style.display = "none";
-    questionQuiz.style.display = "block";
+    //startEl.style.display = "none";
 
 // Timer starts when start button is clicked
     quizTimer();
@@ -161,19 +160,18 @@ function showQuestion(question) {
 
 //Reset Condition
 function resetCondition() {
-// clearStatusClass(document.body)
+//clearStatusClass(document.body)
     nextBtn.classList.add("hide")
-checkAnswer.classList.add("hide")
-    while (multipleChoice.firstChild) {
-        multipleChoice.removeChild
-            (multipleChoice.firstChild)
-    }
+    checkAnswer.classList.add("hide")
+   while (multipleChoice.firstChild) {
+       multipleChoice.removeChild
+           (multipleChoice.firstChild)
+ }
 };
 
 //Select Answer 
 function selectAnswer(e) {
     var choiceBtn = e.target;
-   
     var correct = choiceBtn.dataset.correct;
     checkAnswer.classList.remove("hide")
 //Text appear if the answer is correct or not
@@ -188,24 +186,23 @@ function selectAnswer(e) {
             secondLeft -= 10;
         }
     }
-    setTimeout(function (){
-        checkAnswer.setAttribute("class", "hide");
-    },
-    500) 
 
     Array.from(multipleChoice.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
-    })
+    });
 
+    setTimeout(function(){
+        checkAnswer.setAttribute('class', 'hide');
     if (randomQuestions.length > currentQuestionIndex + 1) {
-        // nextBtn.classList.remove("hide")
+        nextBtn.classList.remove("hide")
         currentQuestionIndex++
         checkAnswer.classList.remove("hide")
-        nextQuestion()
+        nextQuestion();
     } else {
         startBtn.classList.remove("hide")
         saveScore();
     }
+}, 500);
 };
 
 //Show correct answer 
@@ -232,9 +229,8 @@ function saveScore() {
 //localStorage.setItem("scores", JSON.stringify(scores));
     questionQuiz.classList.add("hide");
     document.getElementById("score-result").classList.remove("hide");
-    document.getElementById("user-score").textContent = "Final score is " + secondLeft;
-
-    }, 2000)
+    document.getElementById("user-score").textContent = secondLeft;
+    }, 800)
 };
 
 var loadScores = function () {

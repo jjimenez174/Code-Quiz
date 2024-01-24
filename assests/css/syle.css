@@ -17,6 +17,9 @@ main{
     align-items: center;
     justify-content: center;
 }
+.hide{
+    display: none;
+    }
 body{
     background-image: url("../images/background.jpeg");
     background-repeat: no-repeat;
@@ -74,11 +77,13 @@ h1{
 #question-quiz{
     border: 3px double var(--dark);
     margin-top: 135px;
+    width: 50%;
+    padding: 20px;
 }
 
 .btn-grid{
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 50%);
     gap: 7px;
     margin: 10px 0;
 }
@@ -113,7 +118,10 @@ h2 {
     width: 300px;
     height: 300px;
 }
-
+#user-score{
+    font-size: 50px;
+    margin-top: 10px;
+}
 /*Enter your initial */
 input[type="text"] {
     padding: 10px;
@@ -125,6 +133,7 @@ input[type="text"] {
 
 #submit-button{
     background-color: var(--primary);
+    margin-top: 2px;
 }
   
 /*Leaderboard*/
@@ -132,10 +141,13 @@ input[type="text"] {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
+    margin-bottom: 150px;
+    
 }
 
 .centered {
     text-align: center;
+    margin-top: 45%;
 }
 
 .name-div, .score-div{
@@ -146,22 +158,34 @@ input[type="text"] {
 
 #back-button, #clear-button{
     background-color: var(--primary);
-    margin-top: 30%;
 }
-.hide{
-display: none;
-}
+
 
 /*MEDIA QUERY FOR MOBILE PHONES AND SMALLER*/
 @media screen and (max-width: 575px) {
-    .btn-grid {
-      grid-template-columns: repeat(1, auto);
+.btn-grid {
+      grid-template-columns: repeat(1, 120%);
       gap: 0;
       margin: 0;
     }
+.btn{
+    font-size: 15px;
 }
 
-
+#question-quiz{
+    border: none;
+    margin-bottom: 15px;
+    width: 80%;
+   
+}
+.start-quiz {
+    margin-top: 140px;
+}
+#question{
+    text-align: left;
+    font-size: 20px;
+}
+}
 
 
 
