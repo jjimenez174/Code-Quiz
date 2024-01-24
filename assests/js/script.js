@@ -124,7 +124,7 @@ nextBtn.addEventListener("click", () => {
 
 // Start Quiz
 function startQuiz() {
-    timerID = setInterval(quizTimer, 1000);
+    timerID = setInterval(quizTimer, 800);
      startEl.classList.add("hide");
     randomQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
