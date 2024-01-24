@@ -17,7 +17,7 @@ It was a fun and challenging project. I was able to use my creativity to create 
 
 ## Link Deploy Application
 
-[Deploy Application](https://jjimenez174.github.io/Code-Quiz-code/)
+[Deploy Application](https://jjimenez174.github.io/Code-Quiz)
 
 ## Reference
 https://www.w3schools.com/js/js_quiz.asp
